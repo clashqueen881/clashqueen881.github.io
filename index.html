@@ -24,8 +24,8 @@
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links button { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 0; transition: color 0.2s; }
     .nav-links button:hover, .nav-links button.active { color: var(--text-primary); }
-    .nav-cta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent); border: 1px solid var(--accent); padding: 6px 16px; border-radius: 2px; background: none; cursor: pointer; transition: background 0.2s, color 0.2s; }
-    .nav-cta:hover { background: var(--accent); color: var(--white); }
+    .nav-cta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--white); border: 1px solid var(--accent); padding: 8px 20px; border-radius: 2px; background: var(--accent); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(74,144,217,0.35); }
+    .nav-cta:hover { background: #3a7bc8; border-color: #3a7bc8; box-shadow: 0 4px 20px rgba(74,144,217,0.5); }
 
     /* PAGES */
     .page { display: none; padding-top: 60px; min-height: 100vh; }
@@ -199,16 +199,16 @@
       <p class="page-desc">Five projects across quantum computing, B2B SaaS, and satellite imagery — each one a different flavor of complexity made simple.</p>
     </div>
     <div class="work-grid">
-      <div class="work-card" onclick="showPage('cs-mission-control')">
+      <div class="work-card" onclick="requestAccess('cs-mission-control')">
         <div class="work-card-image"><div class="work-card-number">01 / 05</div></div>
         <div class="work-card-body">
           <div class="work-card-company">Microsoft Quantum</div>
-          <div class="work-card-title">Mission Control Dashboards</div>
+          <div class="work-card-title">Quantum Lab Command Center</div>
           <p class="work-card-desc">Designed real-time monitoring dashboards for the quantum lab — visualizing fridge temperatures, machine states, and research findings for scientists and engineers.</p>
           <div class="work-card-tags"><span class="work-tag">data viz</span><span class="work-tag">dashboard design</span><span class="work-tag">enterprise</span></div>
         </div>
       </div>
-      <div class="work-card" onclick="showPage('cs-glass-display')">
+      <div class="work-card" onclick="requestAccess('cs-glass-display')">
         <div class="work-card-image"><div class="work-card-number">02 / 05</div></div>
         <div class="work-card-body">
           <div class="work-card-company">Microsoft Quantum</div>
@@ -217,7 +217,7 @@
           <div class="work-card-tags"><span class="work-tag">AI interface</span><span class="work-tag">hardware-adjacent</span><span class="work-tag">interaction design</span></div>
         </div>
       </div>
-      <div class="work-card" onclick="showPage('cs-quantumos')">
+      <div class="work-card" onclick="requestAccess('cs-quantumos')">
         <div class="work-card-image light-bg"><div class="work-card-number on-light">03 / 05</div></div>
         <div class="work-card-body">
           <div class="work-card-company">Microsoft Quantum</div>
@@ -226,13 +226,13 @@
           <div class="work-card-tags"><span class="work-tag">0→1 product</span><span class="work-tag">systems design</span><span class="work-tag">developer tools</span></div>
         </div>
       </div>
-      <div class="work-card" onclick="showPage('cs-resource-dashboard')">
+      <div class="work-card" onclick="showPage('cs-baton-forms')">
         <div class="work-card-image light-bg"><div class="work-card-number on-light">04 / 05</div></div>
         <div class="work-card-body">
           <div class="work-card-company">Baton by ClientSuccess</div>
-          <div class="work-card-title">Resource Estimation Dashboard</div>
-          <p class="work-card-desc">A data visualization dashboard for client resource estimation — designed as sole product designer, showing team capacity, timelines, and project health at a glance.</p>
-          <div class="work-card-tags"><span class="work-tag">data viz</span><span class="work-tag">B2B SaaS</span><span class="work-tag">sole designer</span></div>
+          <div class="work-card-title">Baton Forms</div>
+          <p class="work-card-desc">Designed a 0→1 forms feature to eliminate the biggest bottleneck in customer implementations — collecting pre-kickoff assets. Led research, design, and a 22,000-word handoff over 8 months.</p>
+          <div class="work-card-tags"><span class="work-tag">0→1 feature</span><span class="work-tag">B2B SaaS</span><span class="work-tag">UX research</span></div>
         </div>
       </div>
       <div class="work-card" style="grid-column: 1 / -1;" onclick="showPage('cs-design-system')">
@@ -292,7 +292,7 @@
         <div class="resume-section">
           <div class="resume-section-label">Experience</div>
           <div class="resume-role">
-            <div><div class="role-company">Microsoft Quantum</div><div class="role-title">Senior Product Designer</div><p class="role-desc">Led design across four major projects: Mission Control Dashboards, Glass Display / AI Assistant, QuantumOS, and quantum.microsoft.com redesign. Worked directly with senior leadership including executives two levels below Satya Nadella. Managed design system migration from Moray to ReImagine DS.</p></div>
+            <div><div class="role-company">Microsoft Quantum</div><div class="role-title">Senior Product Designer</div><p class="role-desc">Led design across four major projects: Quantum Lab Command Center, Glass Display / AI Assistant, QuantumOS, and quantum.microsoft.com redesign. Worked directly with senior leadership including executives two levels below Satya Nadella. Managed design system migration from Moray to ReImagine DS.</p></div>
             <div class="role-date">2022 – 2024</div>
           </div>
           <div class="resume-role">
@@ -371,7 +371,7 @@
           <span class="cs-company">Microsoft Quantum</span>
           <span class="cs-year">2022 – 2024</span>
         </div>
-        <h1 class="cs-title">Mission Control Dashboards</h1>
+        <h1 class="cs-title">Quantum Lab Command Center</h1>
         <p class="cs-subtitle">Visualizing the invisible — real-time data from one of the world's most advanced quantum computing labs.</p>
         <div class="cs-hero-tags">
           <span class="tag">data visualization</span>
@@ -435,7 +435,7 @@
     </div>
     <div class="cs-nav-footer">
       <button class="cs-nav-btn" onclick="showPage('work')">← All case studies</button>
-      <button class="cs-nav-btn cs-nav-next" onclick="showPage('cs-glass-display')">Glass Display & AI Assistant →</button>
+      <button class="cs-nav-btn cs-nav-next" onclick="requestAccess('cs-glass-display')">Glass Display & AI Assistant →</button>
     </div>
   </div>
 
@@ -507,8 +507,8 @@
       </div>
     </div>
     <div class="cs-nav-footer">
-      <button class="cs-nav-btn" onclick="showPage('cs-mission-control')">← Mission Control</button>
-      <button class="cs-nav-btn cs-nav-next" onclick="showPage('cs-quantumos')">QuantumOS →</button>
+      <button class="cs-nav-btn" onclick="requestAccess('cs-mission-control')">← Mission Control</button>
+      <button class="cs-nav-btn cs-nav-next" onclick="requestAccess('cs-quantumos')">QuantumOS →</button>
     </div>
   </div>
 
@@ -584,13 +584,13 @@
       </div>
     </div>
     <div class="cs-nav-footer">
-      <button class="cs-nav-btn" onclick="showPage('cs-glass-display')">← Glass Display</button>
-      <button class="cs-nav-btn cs-nav-next" onclick="showPage('cs-resource-dashboard')">Resource Dashboard →</button>
+      <button class="cs-nav-btn" onclick="requestAccess('cs-glass-display')">← Glass Display</button>
+      <button class="cs-nav-btn cs-nav-next" onclick="showPage('cs-baton-forms')">Resource Dashboard →</button>
     </div>
   </div>
 
-  <!-- ── CASE STUDY: RESOURCE ESTIMATION DASHBOARD ── -->
-  <div class="page dot-bg" id="page-cs-resource-dashboard">
+  <!-- ── CASE STUDY: BATON FORMS ── -->
+  <div class="page dot-bg" id="page-cs-baton-forms">
     <div class="cs-hero" style="background: var(--white); border-bottom: 1px solid var(--border);">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')" style="color: var(--text-secondary); border-color: var(--border);">← Back to work</button>
@@ -598,70 +598,81 @@
           <span class="cs-company">Baton by ClientSuccess</span>
           <span class="cs-year" style="color: var(--text-secondary);">2022 – 2024</span>
         </div>
-        <h1 class="cs-title" style="color: var(--text-primary);">Resource Estimation Dashboard</h1>
-        <p class="cs-subtitle" style="color: var(--text-secondary);">A beautiful, functional data visualization tool that gave implementation managers clarity over their most complex projects.</p>
+        <h1 class="cs-title" style="color: var(--text-primary);">Baton Forms</h1>
+        <p class="cs-subtitle" style="color: var(--text-secondary);">Eliminating the biggest bottleneck in implementation — one form at a time.</p>
         <div class="cs-hero-tags">
-          <span class="tag">data visualization</span>
+          <span class="tag">0→1 feature</span>
           <span class="tag">B2B SaaS</span>
-          <span class="tag">dashboard design</span>
+          <span class="tag">UX research</span>
           <span class="tag">sole designer</span>
         </div>
       </div>
     </div>
-    <div class="cs-image-full dot-bg-dark">
-      <div class="cs-image-placeholder-label">Resource estimation dashboard — hero screenshot placeholder</div>
+    <div class="cs-image-full" style="background: var(--bg); background-image: radial-gradient(circle, var(--dot-light) 1px, transparent 1px); background-size: 24px 24px;">
+      <div class="cs-image-placeholder-label" style="color: var(--text-secondary);">Baton Forms — hero screenshot placeholder</div>
     </div>
     <div class="cs-body">
       <div class="cs-sidebar">
         <div class="cs-meta-block">
           <div class="cs-meta-label">Role</div>
-          <div class="cs-meta-value">Lead Product Designer (sole designer)</div>
+          <div class="cs-meta-value">Lead Product Designer & UX Researcher (sole designer)</div>
         </div>
         <div class="cs-meta-block">
           <div class="cs-meta-label">Team</div>
-          <div class="cs-meta-value">PM, engineers, customer success team</div>
+          <div class="cs-meta-value">Engineers, customer success, sales</div>
         </div>
         <div class="cs-meta-block">
           <div class="cs-meta-label">Timeline</div>
-          <div class="cs-meta-value">2023</div>
+          <div class="cs-meta-value">8 months</div>
         </div>
         <div class="cs-meta-block">
           <div class="cs-meta-label">Tools</div>
-          <div class="cs-meta-value">Figma, Baton design system</div>
+          <div class="cs-meta-value">Figma, Maze, Grain, Jira, Notion</div>
         </div>
       </div>
       <div class="cs-content">
         <div class="cs-section">
           <div class="cs-section-label">The challenge</div>
-          <p class="cs-text">Baton's users — implementation managers at enterprise companies — were responsible for onboarding clients to complex software products. At any given time, a manager might be running 10–20 simultaneous implementations, each with its own timeline, team, resource requirements, and risk profile.</p>
-          <p class="cs-text">Understanding their resource picture across all of these projects was nearly impossible with the tools they had. Managers were maintaining manual spreadsheets, running calculations in their heads, and regularly being caught off guard by capacity crunches and overallocation.</p>
+          <p class="cs-text">Implementation managers at enterprise companies were losing weeks of time to a single, persistent bottleneck: collecting assets from new clients before a project could even kick off. The tools they were using — external forms, email threads, spreadsheets — weren't built for their workflow. The result was constant back-and-forth, delayed timelines, and implementations that started behind schedule before they'd begun.</p>
+          <p class="cs-text">The feedback from Baton's customers was consistent and direct:</p>
+          <blockquote class="cs-quote">"Getting information from new customers and our sales rep has been a huge bottleneck in our implementations." — Joe M., Built</blockquote>
+          <blockquote class="cs-quote">"We have forms to get info before kick-off, they just don't work — we get a very delayed response. Follow-ups take time." — Osama M., Atrio</blockquote>
+          <p class="cs-text">The opportunity was clear: build a native forms feature inside Baton so implementation managers could collect, organize, and verify pre-kickoff assets — all within the same product where they were running their projects.</p>
         </div>
         <div class="cs-image-2col">
-          <div class="cs-img-placeholder">Research — user interview insights placeholder</div>
-          <div class="cs-img-placeholder">Whiteboard — resource model exploration</div>
+          <div class="cs-img-placeholder">Customer interview insights placeholder</div>
+          <div class="cs-img-placeholder">Competitor analysis matrix placeholder</div>
         </div>
         <div class="cs-section">
           <div class="cs-section-label">The approach</div>
-          <p class="cs-text">As the sole designer on this project, I owned everything from initial research to final pixel. I started by embedding with our power users — the managers running the most complex implementations — to understand exactly what mental models they used when thinking about resources. What did "overallocated" feel like? What did they look at first thing in the morning? What made them nervous?</p>
-          <p class="cs-text">The core insight was that resource estimation isn't just a data problem — it's a confidence problem. Managers don't just need to see the numbers; they need to feel confident that they've seen the right numbers in the right context. The dashboard needed to give them that feeling of "I know where everything stands" in under 30 seconds.</p>
-          <p class="cs-text">I designed around a timeline-first view: all projects laid out chronologically, with resource loads shown as visual density. Over-allocation showed up as color saturation changes — a technique borrowed from data visualization best practices that made the risk immediately legible without requiring any calculation.</p>
+          <p class="cs-text">I led both the research and design for this feature over eight months as the sole designer. Discovery started with deep customer conversations — recurring calls with the implementation managers who would use this every day. I needed to understand not just the pain, but the exact shape of it: what they needed to collect, from whom, at what stage, and what happened when it didn't arrive on time.</p>
+          <p class="cs-text">A competitor scan followed. Most tools were solving this problem with external form applications bolted onto their products — Google Forms, Typeform, and their equivalents. They all fell short of the specific needs of implementation workflows, which meant the gap was real and the opportunity was ours.</p>
+          <p class="cs-text">Before any UI work, I worked through the architecture — how Forms would integrate with Baton's existing templated project structure, how a form object would behave in the database, and how it would connect to assets already living in the product. Getting this right early saved weeks downstream.</p>
+          <p class="cs-text">I brought the full team in early and kept them there. A series of weekly recurring meetings — each with a defined purpose — kept engineers, customer success, and sales reps aligned at every stage. I used Baton itself to document and map the process so the entire team could follow the thread from meeting to milestone.</p>
+          <p class="cs-text">Testing ran on two tracks simultaneously. Internally, I ran ongoing sessions where customers worked through Figma prototypes on specific tasks — friction points surfaced immediately and fed directly back into the designs. Externally, I used Maze to recruit a broader user pool and gather quantitative and qualitative data that shaped the final calls.</p>
         </div>
-        <div class="cs-image-full-inline dot-bg-dark">
-          <div class="cs-image-placeholder-label">Resource estimation dashboard — full view placeholder</div>
+        <div class="cs-image-full-inline" style="background: var(--bg); background-image: radial-gradient(circle, var(--dot-light) 1px, transparent 1px); background-size: 24px 24px; height: 320px; display: flex; align-items: center; justify-content: center;">
+          <div class="cs-image-placeholder-label" style="color: var(--text-secondary);">Baton Forms — full interface view placeholder</div>
+        </div>
+        <div class="cs-section">
+          <div class="cs-section-label">The handoff</div>
+          <p class="cs-text">When it was time to hand off to engineering, I wrote a 22,000-word specification document detailing every interaction, state, and edge case in the feature. It was meticulous by design — the goal was to make implementation unambiguous and eliminate the back-and-forth that typically slows a build of this complexity. It worked: deployment time was cut almost in half.</p>
         </div>
         <div class="cs-section">
           <div class="cs-section-label">The outcome</div>
-          <p class="cs-text">The dashboard became one of Baton's most-used features by power users. Managers reported spending significantly less time on resource planning and feeling more confident going into weekly standups and executive reviews. One customer described it as "the first time I've felt like I actually know what's going on."</p>
-          <p class="cs-text">The visualization approach we developed for this project also influenced subsequent data features in Baton, establishing a visual grammar for how the product communicates capacity and risk.</p>
+          <p class="cs-text">Baton Forms launched to immediate, enthusiastic adoption. The impact was concrete: a 30% reduction in development time, a 60% reduction in handoff time, and three new customer deals closed where Forms was cited as the deciding differentiator from competing products.</p>
+          <blockquote class="cs-quote">"This feature is a game changer. No other product in the space has something this seamless and easy to use." — Ben, Ramsoft</blockquote>
+          <blockquote class="cs-quote">"This cuts our pre-implementation time in half. Forms has changed the way we do implementations." — Joe, Built</blockquote>
+          <p class="cs-text">The process standards built around this project also stuck — the review and documentation approach developed during the 8-month build became permanent team practice, contributing to a sustained improvement in how Baton shipped product.</p>
         </div>
         <div class="cs-image-2col">
-          <div class="cs-img-placeholder">Final — timeline overview</div>
-          <div class="cs-img-placeholder">Final — individual project drill-down</div>
+          <div class="cs-img-placeholder">Final — form builder view</div>
+          <div class="cs-img-placeholder">Final — client-facing form experience</div>
         </div>
       </div>
     </div>
     <div class="cs-nav-footer">
-      <button class="cs-nav-btn" onclick="showPage('cs-quantumos')">← QuantumOS</button>
+      <button class="cs-nav-btn" onclick="requestAccess('cs-quantumos')">← QuantumOS</button>
       <button class="cs-nav-btn cs-nav-next" onclick="showPage('cs-design-system')">Design System →</button>
     </div>
   </div>
@@ -743,7 +754,7 @@
       </div>
     </div>
     <div class="cs-nav-footer">
-      <button class="cs-nav-btn" onclick="showPage('cs-resource-dashboard')">← Resource Dashboard</button>
+      <button class="cs-nav-btn" onclick="showPage('cs-baton-forms')">← Resource Dashboard</button>
       <button class="cs-nav-btn cs-nav-next" onclick="showPage('work')">All case studies →</button>
     </div>
   </div>
@@ -788,9 +799,46 @@
     .cs-nav-btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text-secondary); background: none; border: 1px solid var(--border); padding: 10px 18px; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; }
     .cs-nav-btn:hover { color: var(--accent); border-color: var(--accent); }
     .cs-nav-next { color: var(--text-primary); }
+    .cs-quote { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--text-primary); line-height: 1.7; border-left: 2px solid var(--accent); padding-left: 20px; margin: 24px 0; }
+
+    /* ── PASSWORD MODAL ── */
+    .pw-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(26,26,26,0.6); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+    .pw-overlay.active { display: flex; }
+    .pw-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 40px 40px 36px; width: 360px; animation: fadeUp 0.25s ease both; }
+    .pw-eyebrow { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .pw-heading { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--text-primary); margin-bottom: 8px; line-height: 1.2; }
+    .pw-sub { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+    .pw-input-row { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.2s; }
+    .pw-input-row:focus-within { border-color: var(--accent); }
+    .pw-input { flex: 1; font-family: var(--mono); font-size: 13px; color: var(--text-primary); background: none; border: none; outline: none; padding: 11px 14px; letter-spacing: 0.04em; }
+    .pw-input::placeholder { color: var(--text-tertiary); }
+    .pw-btn { font-family: var(--mono); font-size: 16px; color: var(--accent); background: none; border: none; border-left: 1px solid var(--border); padding: 10px 16px; cursor: pointer; transition: background 0.2s, color 0.2s; line-height: 1; }
+    .pw-btn:hover { background: var(--accent); color: var(--white); }
+    .pw-error { font-size: 11px; color: #C0392B; letter-spacing: 0.04em; margin-top: 10px; display: none; }
+    .pw-dismiss { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-tertiary); background: none; border: none; cursor: pointer; margin-top: 20px; padding: 0; transition: color 0.2s; }
+    .pw-dismiss:hover { color: var(--text-secondary); }
   </style>
 
+  <!-- PASSWORD MODAL -->
+  <div class="pw-overlay" id="pw-modal">
+    <div class="pw-card">
+      <div class="pw-eyebrow">Protected work</div>
+      <div class="pw-heading">Enter password to continue</div>
+      <p class="pw-sub">This case study is password protected. Reach out at jnrenne@gmail.com if you'd like access.</p>
+      <div class="pw-input-row">
+        <input type="password" id="pw-input" class="pw-input" placeholder="Password" onkeydown="if(event.key==='Enter') checkPassword()">
+        <button class="pw-btn" onclick="checkPassword()">→</button>
+      </div>
+      <div class="pw-error" id="pw-error">Incorrect password — try again</div>
+      <br>
+      <button class="pw-dismiss" onclick="dismissModal()">Cancel</button>
+    </div>
+  </div>
+
   <script>
+    let pendingPage = null;
+    let authenticated = false;
+
     function showPage(page) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
@@ -802,6 +850,32 @@
         document.getElementById('nav-work').classList.add('active');
       }
       window.scrollTo(0, 0);
+    }
+
+    function requestAccess(page) {
+      if (authenticated) { showPage(page); return; }
+      pendingPage = page;
+      document.getElementById('pw-error').style.display = 'none';
+      document.getElementById('pw-input').value = '';
+      document.getElementById('pw-modal').classList.add('active');
+      setTimeout(() => document.getElementById('pw-input').focus(), 50);
+    }
+
+    function checkPassword() {
+      const val = document.getElementById('pw-input').value;
+      if (val === 'letsworktogether') {
+        authenticated = true;
+        document.getElementById('pw-modal').classList.remove('active');
+        if (pendingPage) { showPage(pendingPage); pendingPage = null; }
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+        document.getElementById('pw-input').select();
+      }
+    }
+
+    function dismissModal() {
+      document.getElementById('pw-modal').classList.remove('active');
+      pendingPage = null;
     }
   </script>
 </body>
