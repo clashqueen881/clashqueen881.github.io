@@ -41,10 +41,14 @@
     .hero-sub { font-size: 13px; color: var(--text-secondary); line-height: 1.8; max-width: 480px; margin-bottom: 40px; }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
     .tag { font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 2px; padding: 4px 10px; letter-spacing: 0.04em; }
-    .hero-cta { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--text-primary); background: none; border: none; border-bottom: 1px solid var(--text-primary); padding-bottom: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; }
-    .hero-cta:hover { color: var(--accent); border-color: var(--accent); }
-    .hero-image-stack { position: relative; height: 400px; }
-    .hero-img-main { width: 100%; height: 400px; border-radius: 4px; border: 1px solid var(--border); background: var(--dark); background-image: radial-gradient(circle, var(--dot-dark) 1px, transparent 1px); background-size: 24px 24px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--white); background: var(--accent); border: 1px solid var(--accent); border-radius: 2px; padding: 12px 24px; cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(74,144,217,0.35); }
+    .hero-cta:hover { background: #3a7bc8; border-color: #3a7bc8; box-shadow: 0 4px 20px rgba(74,144,217,0.5); }
+    .hero-image-stack { position: relative; height: 520px; }
+    .hero-img-main { position: relative; width: 100%; height: 520px; overflow: hidden; background-color: var(--bg); background-image: radial-gradient(circle, var(--dot-light) 1px, transparent 1px); background-size: 24px 24px; background-position: 0 0; }
+    .hero-photo, .hero-photo-blue { position: absolute; left: 50%; bottom: 0; height: 135%; width: auto; object-fit: contain; object-position: bottom center; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+    .hero-photo { transform: translateX(-50%) translateY(-40px); z-index: 2; opacity: 0; animation: fadeUp 0.9s 0.4s ease both; }
+    .hero-photo-blue { transform: translateX(calc(-50% + 12px)) translateY(-28px); z-index: 1; opacity: 0; animation: fadeUp 0.9s 0.2s ease both; }
+    .hero-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, var(--dot-light) 1px, transparent 1px); background-size: 24px 24px; background-position: 0 0; pointer-events: none; z-index: 3; }
 
     /* TESTIMONIALS */
     .testimonials-strip { border-top: 1px solid var(--border); padding: 48px; background: var(--white); }
@@ -147,8 +151,8 @@
     <div class="hero">
       <div class="hero-left">
         <div class="hero-eyebrow">Product Designer · Seattle, WA</div>
-        <h1 class="hero-headline">I turn complex data and systems into simple experiences.</h1>
-        <p class="hero-sub">Senior product designer with a master's in data science. I've designed mission control dashboards for quantum computers, built design systems from scratch, and shipped 0→1 products at Microsoft and beyond.</p>
+        <h1 class="hero-headline">I turn complex data and systems into simple and intuitive experiences.</h1>
+        <p class="hero-sub">Senior product designer with a master's in data science. I've designed mission control dashboards for quantum computers, built design systems from scratch, and shipped 0→1 products.</p>
         <div class="hero-tags">
           <span class="tag">data visualization</span>
           <span class="tag">systems thinking</span>
@@ -159,7 +163,11 @@
       </div>
       <div class="hero-right">
         <div class="hero-image-stack">
-          <div class="hero-img-main"></div>
+          <div class="hero-img-main">
+            <img class="hero-photo-blue" src="me_blue.png" alt="" aria-hidden="true">
+            <img class="hero-photo" src="me.png" alt="Julie Renne">
+            <div class="hero-dots" aria-hidden="true"></div>
+          </div>
         </div>
       </div>
     </div>
