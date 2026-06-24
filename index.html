@@ -19,17 +19,20 @@
     .dot-bg { background-color: var(--bg); background-image: radial-gradient(circle, var(--dot-light) 1px, transparent 1px); background-size: 24px 24px; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(247,247,245,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text-primary); cursor: pointer; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 300; background: rgba(247,247,245,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--text-primary); cursor: pointer; -webkit-font-smoothing: antialiased; text-decoration: none; }
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-    .nav-links button { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 0; transition: color 0.2s; }
-    .nav-links button:hover, .nav-links button.active { color: var(--text-primary); }
+    .nav-links a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 0; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
     .nav-cta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--white); border: 1px solid var(--accent); padding: 8px 20px; border-radius: 2px; background: var(--accent); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(74,144,217,0.35); }
     .nav-cta:hover { background: #3a7bc8; border-color: #3a7bc8; box-shadow: 0 4px 20px rgba(74,144,217,0.5); }
 
-    /* PAGES */
-    .page { display: none; padding-top: 60px; min-height: 100vh; }
-    .page.active { display: block; }
+    /* MAIN SECTIONS */
+    .main-section { padding-top: 60px; min-height: 100vh; }
+
+    /* CASE STUDY OVERLAYS */
+    .cs-overlay { display: none; position: fixed; inset: 0; z-index: 200; overflow-y: auto; background: var(--bg); padding-top: 60px; }
+    .cs-overlay.active { display: block; }
 
     /* HOME */
     .hero { min-height: calc(100vh - 60px); display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 80px 48px; gap: 80px; }
@@ -136,18 +139,18 @@
 
 
   <nav>
-    <span class="nav-logo" onclick="showPage('home')">Julie Renne</span>
+    <a class="nav-logo" href="#home">Julie Renne</a>
     <ul class="nav-links">
-      <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
-      <li><button onclick="showPage('work')" id="nav-work">Work</button></li>
-      <li><button onclick="showPage('resume')" id="nav-resume">Resume</button></li>
-      <li><button onclick="showPage('about')" id="nav-about">About</button></li>
+      <li><a href="#home" id="nav-home" class="active">Home</a></li>
+      <li><a href="#work" id="nav-work">Work</a></li>
+      <li><a href="#resume" id="nav-resume">Resume</a></li>
+      <li><a href="#about" id="nav-about">About</a></li>
     </ul>
     <button class="nav-cta" onclick="window.location.href='mailto:jnrenne@gmail.com'">Let's connect →</button>
   </nav>
 
   <!-- HOME -->
-  <div class="page dot-bg active" id="page-home">
+  <div class="main-section dot-bg" id="home">
     <div class="hero">
       <div class="hero-left">
         <div class="hero-eyebrow">Product Designer · Seattle, WA</div>
@@ -188,19 +191,10 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-name">Julie Renne</div>
-      <div class="footer-links">
-        <button onclick="window.location.href='mailto:jnrenne@gmail.com'">jnrenne@gmail.com</button>
-        <button>LinkedIn</button>
-        <button>(425) 761-9063</button>
-      </div>
-      <div class="footer-copy">Seattle, WA · © 2025</div>
-    </footer>
   </div>
 
   <!-- WORK -->
-  <div class="page dot-bg" id="page-work">
+  <div class="main-section dot-bg" id="work">
     <div class="page-header">
       <div class="page-eyebrow">Selected work</div>
       <h1 class="page-title">Case studies</h1>
@@ -255,15 +249,10 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-name">Julie Renne</div>
-      <div class="footer-links"><button onclick="window.location.href='mailto:jnrenne@gmail.com'">jnrenne@gmail.com</button><button>LinkedIn</button></div>
-      <div class="footer-copy">Seattle, WA · © 2025</div>
-    </footer>
   </div>
 
   <!-- RESUME -->
-  <div class="page" id="page-resume">
+  <div class="main-section" id="resume">
     <div class="resume-layout">
       <div class="resume-sidebar">
         <div class="resume-sidebar-name">Julie Renne</div>
@@ -322,15 +311,10 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-name">Julie Renne</div>
-      <div class="footer-links"><button onclick="window.location.href='mailto:jnrenne@gmail.com'">jnrenne@gmail.com</button></div>
-      <div class="footer-copy">Seattle, WA · © 2025</div>
-    </footer>
   </div>
 
   <!-- ABOUT -->
-  <div class="page" id="page-about">
+  <div class="main-section" id="about">
     <div class="about-layout">
       <div class="about-left">
         <div class="about-photo-placeholder"><div style="font-size:10px;color:#555550;letter-spacing:0.1em;text-align:center;">photo<br>placeholder</div></div>
@@ -371,7 +355,7 @@
   </div>
 
   <!-- ── CASE STUDY: MISSION CONTROL ── -->
-  <div class="page dot-bg" id="page-cs-mission-control">
+  <div class="cs-overlay dot-bg" id="page-cs-mission-control">
     <div class="cs-hero dot-bg-dark">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')">← Back to work</button>
@@ -448,7 +432,7 @@
   </div>
 
   <!-- ── CASE STUDY: GLASS DISPLAY ── -->
-  <div class="page dot-bg" id="page-cs-glass-display">
+  <div class="cs-overlay dot-bg" id="page-cs-glass-display">
     <div class="cs-hero dot-bg-dark">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')">← Back to work</button>
@@ -521,7 +505,7 @@
   </div>
 
   <!-- ── CASE STUDY: QUANTUMOS ── -->
-  <div class="page dot-bg" id="page-cs-quantumos">
+  <div class="cs-overlay dot-bg" id="page-cs-quantumos">
     <div class="cs-hero dot-bg-dark">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')">← Back to work</button>
@@ -598,7 +582,7 @@
   </div>
 
   <!-- ── CASE STUDY: BATON FORMS ── -->
-  <div class="page dot-bg" id="page-cs-baton-forms">
+  <div class="cs-overlay dot-bg" id="page-cs-baton-forms">
     <div class="cs-hero" style="background: var(--white); border-bottom: 1px solid var(--border);">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')" style="color: var(--text-secondary); border-color: var(--border);">← Back to work</button>
@@ -686,7 +670,7 @@
   </div>
 
   <!-- ── CASE STUDY: BATON DESIGN SYSTEM ── -->
-  <div class="page dot-bg" id="page-cs-design-system">
+  <div class="cs-overlay dot-bg" id="page-cs-design-system">
     <div class="cs-hero" style="background: var(--white); border-bottom: 1px solid var(--border);">
       <div class="cs-hero-inner">
         <button class="cs-back" onclick="showPage('work')" style="color: var(--text-secondary); border-color: var(--border);">← Back to work</button>
@@ -846,18 +830,24 @@
   <script>
     let pendingPage = null;
     let authenticated = false;
+    const mainSections = ['home', 'work', 'resume', 'about'];
 
     function showPage(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-      document.getElementById('page-' + page).classList.add('active');
-      const navId = 'nav-' + page;
-      if (document.getElementById(navId)) {
-        document.getElementById(navId).classList.add('active');
+      // Close any open case study overlay
+      document.querySelectorAll('.cs-overlay').forEach(p => p.classList.remove('active'));
+
+      if (mainSections.includes(page)) {
+        // Scroll to the section
+        const el = document.getElementById(page);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       } else {
+        // Open case study overlay
+        const overlay = document.getElementById('page-' + page);
+        if (overlay) { overlay.classList.add('active'); overlay.scrollTop = 0; }
+        // Mark Work nav active when viewing a case study
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
         document.getElementById('nav-work').classList.add('active');
       }
-      window.scrollTo(0, 0);
     }
 
     function requestAccess(page) {
@@ -885,6 +875,24 @@
       document.getElementById('pw-modal').classList.remove('active');
       pendingPage = null;
     }
+
+    // Highlight nav link based on scroll position
+    const observer = new IntersectionObserver((entries) => {
+      // Only update nav if no case study overlay is open
+      if (document.querySelector('.cs-overlay.active')) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+          const navEl = document.getElementById('nav-' + entry.target.id);
+          if (navEl) navEl.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    mainSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   </script>
 </body>
 </html>
